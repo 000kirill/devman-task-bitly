@@ -16,6 +16,7 @@ pip install -r requirements.txt
 Запускать код необходимо через консоль:
 ```
 python main.py `ваша ссылка`
+```
 
 ### Цель проекта
 
