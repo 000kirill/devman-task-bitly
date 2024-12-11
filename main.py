@@ -4,15 +4,6 @@ import os
 import argparse
 
 
-parser = argparse.ArgumentParser(
-    description='Описание что делает программа'
-)
-parser.add_argument('name', help='Ваше имя')
-args = parser.parse_args()
-print(args.name)
-
-
-
 def shorten_link(token, url):
     url_method = "https://api.vk.ru/method/utils.getShortLink"
     payload = {
