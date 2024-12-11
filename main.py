@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 import requests
 from urllib.parse import urlparse 
 import os
@@ -56,11 +57,11 @@ def get_shorten_link_value(token, url):
 
 
 def main():
+    load_dotenv()
     parser = argparse.ArgumentParser(description='Считает клики по ссылкам')
     parser.add_argument('url', help='Введите ссылку')
     args = parser.parse_args()
-    vk_api_key = "8a39e3a28a39e3a28a39e3a28b8922862788a398a39e3a2ec8fa71786ec4c8774b39233"
-    # vk_api_key = os.environ['VK_API_KEY']
+    vk_api_key = os.environ['VK_API_KEY']
     if get_shorten_link_value(vk_api_key, args.url):
         print("Количество переходов по ссылке:", count_clicks(vk_api_key, args.url))
     else:
